@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" rx="16" fill="#0f1422"/>
+  
+  <rect x="50" y="30" width="340" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="70" y="51" fill="#e2e8f0" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">CyberSecure '25 Hackathon</text>
+  <text x="245" y="51" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">| 20 May 2025</text>
+
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="700" height="56" rx="10" fill="#1a2234" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="34" fill="#64748b" font-family="-apple-system, sans-serif" font-size="13">https://secure-login-bank-verify.suspicious-domain.cc/auth</text>
+    <rect x="585" y="10" width="105" height="36" rx="6" fill="#ef4444"/>
+    <text x="637" y="33" text-anchor="middle" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">SCAN URL</text>
+  </g>
+
+  <g transform="translate(50, 165)">
+    <text x="0" y="20" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">FOUR CLASSIFICATION STATES:</text>
+    
+    <rect x="0" y="40" width="160" height="150" rx="10" fill="#1a1015" stroke="#ef4444" stroke-width="1.5"/>
+    <circle cx="25" cy="65" r="8" fill="#ef4444"/>
+    <text x="42" y="70" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Phishing</text>
+    <text x="15" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">High-confidence malicious keyword signatures.</text>
+    <rect x="15" y="150" width="130" height="22" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+    <text x="80" y="165" text-anchor="middle" fill="#fca5a5" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">CRITICAL RISK</text>
+
+    <rect x="180" y="40" width="160" height="150" rx="10" fill="#1a1710" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="205" cy="65" r="8" fill="#f59e0b"/>
+    <text x="222" y="70" fill="#fde68a" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Possibly Phishing</text>
+    <text x="195" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Partial suspicious matches or redirects.</text>
+    <rect x="195" y="150" width="130" height="22" rx="4" fill="#f59e0b" fill-opacity="0.2"/>
+    <text x="260" y="165" text-anchor="middle" fill="#fde68a" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">CAUTION ADVISED</text>
+
+    <rect x="360" y="40" width="160" height="150" rx="10" fill="#0d1a15" stroke="#10b981" stroke-width="1.5"/>
+    <circle cx="385" cy="65" r="8" fill="#10b981"/>
+    <text x="402" y="70" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Safe</text>
+    <text x="375" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">No suspicious tokens or blacklisted patterns.</text>
+    <rect x="375" y="150" width="130" height="22" rx="4" fill="#10b981" fill-opacity="0.2"/>
+    <text x="440" y="165" text-anchor="middle" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">CLEAN STATUS</text>
+
+    <rect x="540" y="40" width="160" height="150" rx="10" fill="#151922" stroke="#64748b" stroke-width="1.5"/>
+    <circle cx="565" cy="65" r="8" fill="#64748b"/>
+    <text x="582" y="70" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Invalid</text>
+    <text x="555" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Malformed URL syntax or unreachable host.</text>
+    <rect x="555" y="150" width="130" height="22" rx="4" fill="#64748b" fill-opacity="0.2"/>
+    <text x="620" y="165" text-anchor="middle" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10" font-weight="700">SYNTAX ERROR</text>
+  </g>
+
+  <rect x="50" y="400" width="700" height="42" rx="8" fill="#131a2c" stroke="#1f293d" stroke-width="1"/>
+  <text x="70" y="426" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12"><tspan fill="#6366f1" font-weight="700">Engine:</tspan> Keyword-Based Python/Flask Scanner (Pure Pattern Matching &amp; Token Evaluation)</text>
+</svg>

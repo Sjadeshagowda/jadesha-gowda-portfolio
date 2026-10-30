@@ -1,0 +1,21 @@
+# ===================================================================
+# Netlify Production Configuration — S Jadesha Gowda Portfolio
+# ===================================================================
+
+[build]
+  publish = "."
+  # No build command needed for this pure static website
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
