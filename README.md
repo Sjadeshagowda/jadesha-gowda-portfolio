@@ -103,14 +103,17 @@ If you do not want to set up Git right now, you can deploy manually:
 
 ## 🎖️ Certifications Index (11 Total)
 
-### Credly-Verified Credentials (4 Badges)
+### Credly-Verified Credentials & PDF Certificates (4 Badges)
 1. **ServiceNow Certified Application Developer (CAD)**
-   - Issuer: ServiceNow (Issue date not provided)
+   - Issuer: ServiceNow
+   - Issue Date: June 27, 2026
+   - Certificate PDF: `assets/certificates/ServiceNow_CAD.pdf` (View & Download supported)
    - Credential ID: `9bd5af7c-5ec7-4bea-887b-e8f093086d5a`
    - Verification: [Verify CAD on Credly](https://www.credly.com/badges/9bd5af7c-5ec7-4bea-887b-e8f093086d5a/public_url)
 2. **ServiceNow Certified System Administrator (CSA)**
    - Issuer: ServiceNow
-   - Issue Date: June 2026
+   - Issue Date: July 1, 2026
+   - Certificate PDF: `assets/certificates/ServiceNow_CSA.pdf` (View & Download supported)
    - Credential ID: `ae994f9f-8c34-4783-9406-5897d365fc89`
    - Verification: [Verify CSA on Credly](https://www.credly.com/badges/ae994f9f-8c34-4783-9406-5897d365fc89/public_url)
 3. **AWS Cloud Quest: Cloud Practitioner — Training Badge**

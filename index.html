@@ -30,12 +30,12 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <meta name="theme-color" content="#0b0f19">
+  <meta name="theme-color" content="#090a0f">
 
-  <!-- Fonts: Space Grotesk (Headings) & Plus Jakarta Sans (Body) -->
+  <!-- Fonts: Plus Jakarta Sans (Clean, Modern, Accessible) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -182,8 +182,6 @@
 
     <!-- ==================== 1. HERO SECTION (TWO-COLUMN WITH ACTUAL PHOTO) ==================== -->
     <section id="hero" class="hero-section section-container" aria-label="Introduction">
-      <div class="hero-glow-backdrop" aria-hidden="true"></div>
-      
       <div class="hero-grid">
         <!-- Left Column: Narrative, Roles, Value Statement & Actions -->
         <div class="hero-content">
@@ -272,7 +270,6 @@
         <!-- Right Column: Hero Profile Photograph Frame -->
         <div class="hero-photo-wrapper">
           <div class="hero-photo-frame">
-            <div class="hero-photo-glow" aria-hidden="true"></div>
             <img 
               src="assets/images/jadesha-profile.jpg" 
               alt="Jadesha Gowda — Profile Photograph" 
@@ -616,8 +613,8 @@
               <p class="pending-title">Chronological Milestones (Credly Verified &amp; Academic)</p>
               <p class="pending-desc">Documented milestones without fabricated numerical rankings:</p>
               <div class="timeline-unranked-list">
-                <span class="timeline-pill highlight-pill">ServiceNow CAD (Credly)</span>
-                <span class="timeline-pill highlight-pill">ServiceNow CSA (June 2026 Credly)</span>
+                <span class="timeline-pill highlight-pill">ServiceNow CAD (June 27, 2026 &bull; Credly)</span>
+                <span class="timeline-pill highlight-pill">ServiceNow CSA (July 1, 2026 &bull; Credly)</span>
                 <span class="timeline-pill highlight-pill">AWS Cloud Quest: Cloud Practitioner (April 2026 Credly)</span>
                 <span class="timeline-pill highlight-pill">Micro-Certification &mdash; Welcome to ServiceNow (May 2026 Credly)</span>
                 <span class="timeline-pill">AWS Certified Cloud Practitioner</span>
@@ -980,59 +977,85 @@
         </div>
 
         <div class="cert-grid cert-grid-featured">
-          <!-- 1. ServiceNow CAD (Credly) -->
-          <div class="cert-card cert-card-highlight">
+          <!-- 1. ServiceNow CAD (PDF & Credly Verified) -->
+          <div class="cert-card">
             <div class="cert-card-top">
               <div class="cert-logo-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
               </div>
-              <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
+              <div class="cert-badge-cluster">
+                <span class="cert-status-badge badge-pdf-available">PDF Available</span>
+                <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
+              </div>
             </div>
             <span class="cert-type-tag">Professional Certification</span>
             <h4 class="cert-title">ServiceNow Certified Application Developer (CAD)</h4>
             <p class="cert-issuer">Issuer: <strong>ServiceNow</strong></p>
             <div class="cert-metadata-box">
+              <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">June 27, 2026</span></div>
               <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">9bd5af7c-5ec7-4bea-887b-e8f093086d5a</span></div>
-              <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">Issue date not provided</span></div>
             </div>
             <p class="cert-desc">Validates advanced expertise in creating custom applications, automated Flow Designer workflows, business logic scripts, and platform integrations.</p>
             <div class="cert-card-footer">
-              <a href="https://www.credly.com/badges/9bd5af7c-5ec7-4bea-887b-e8f093086d5a/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary verify-btn" aria-label="Verify ServiceNow CAD on Credly">
-                <span>Verify on Credly</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+              <div class="cert-actions-wrap">
+                <a href="assets/certificates/ServiceNow_CAD.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary cert-btn" title="View ServiceNow CAD Certificate in new tab">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  <span>View Certificate</span>
+                </a>
+                <a href="assets/certificates/ServiceNow_CAD.pdf" download="ServiceNow_CAD.pdf" class="btn btn-sm btn-secondary cert-btn" title="Download ServiceNow CAD Certificate (PDF)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download</span>
+                </a>
+                <a href="https://www.credly.com/badges/9bd5af7c-5ec7-4bea-887b-e8f093086d5a/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline cert-btn" title="Verify CAD on Credly">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Credly</span>
+                </a>
+              </div>
             </div>
           </div>
 
-          <!-- 2. ServiceNow CSA (Credly) -->
-          <div class="cert-card cert-card-highlight">
+          <!-- 2. ServiceNow CSA (PDF & Credly Verified) -->
+          <div class="cert-card">
             <div class="cert-card-top">
               <div class="cert-logo-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
               </div>
-              <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
+              <div class="cert-badge-cluster">
+                <span class="cert-status-badge badge-pdf-available">PDF Available</span>
+                <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
+              </div>
             </div>
             <span class="cert-type-tag">Professional Certification</span>
             <h4 class="cert-title">ServiceNow Certified System Administrator (CSA)</h4>
             <p class="cert-issuer">Issuer: <strong>ServiceNow</strong></p>
             <div class="cert-metadata-box">
+              <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">July 1, 2026</span></div>
               <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">ae994f9f-8c34-4783-9406-5897d365fc89</span></div>
-              <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">June 2026</span></div>
             </div>
             <p class="cert-desc">Confirms comprehensive skills in managing ServiceNow instances, configuring user access, UI policies, notifications, and CMDB administration.</p>
             <div class="cert-card-footer">
-              <a href="https://www.credly.com/badges/ae994f9f-8c34-4783-9406-5897d365fc89/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary verify-btn" aria-label="Verify ServiceNow CSA on Credly">
-                <span>Verify on Credly</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+              <div class="cert-actions-wrap">
+                <a href="assets/certificates/ServiceNow_CSA.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary cert-btn" title="View ServiceNow CSA Certificate in new tab">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                  <span>View Certificate</span>
+                </a>
+                <a href="assets/certificates/ServiceNow_CSA.pdf" download="ServiceNow_CSA.pdf" class="btn btn-sm btn-secondary cert-btn" title="Download ServiceNow CSA Certificate (PDF)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download</span>
+                </a>
+                <a href="https://www.credly.com/badges/ae994f9f-8c34-4783-9406-5897d365fc89/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline cert-btn" title="Verify CSA on Credly">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Credly</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- 3. AWS Cloud Quest: Cloud Practitioner — Training Badge (Credly) -->
-          <div class="cert-card cert-card-highlight">
+          <div class="cert-card">
             <div class="cert-card-top">
               <div class="cert-logo-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
               </div>
               <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
             </div>
@@ -1040,23 +1063,25 @@
             <h4 class="cert-title">AWS Cloud Quest: Cloud Practitioner</h4>
             <p class="cert-issuer">Issuer: <strong>Amazon Web Services Training and Certification</strong></p>
             <div class="cert-metadata-box">
-              <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">cbca3e05-fd60-4a63-8a25-a37e69fac1c4</span></div>
               <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">April 2026</span></div>
+              <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">cbca3e05-fd60-4a63-8a25-a37e69fac1c4</span></div>
             </div>
             <p class="cert-desc">Hands-on experiential training badge validating practical cloud fundamentals, AWS compute, storage, security, and networking solutions.</p>
             <div class="cert-card-footer">
-              <a href="https://www.credly.com/badges/cbca3e05-fd60-4a63-8a25-a37e69fac1c4/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary verify-btn" aria-label="Verify AWS Cloud Quest on Credly">
-                <span>Verify on Credly</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+              <div class="cert-actions-wrap">
+                <a href="https://www.credly.com/badges/cbca3e05-fd60-4a63-8a25-a37e69fac1c4/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline cert-btn" aria-label="Verify AWS Cloud Quest on Credly">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Verify on Credly</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- 4. Micro-Certification — Welcome to ServiceNow (Credly) -->
-          <div class="cert-card cert-card-highlight">
+          <div class="cert-card">
             <div class="cert-card-top">
               <div class="cert-logo-box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
               </div>
               <span class="cert-status-badge badge-credly-verified">Credly Verified</span>
             </div>
@@ -1064,15 +1089,17 @@
             <h4 class="cert-title">Micro-Certification &mdash; Welcome to ServiceNow</h4>
             <p class="cert-issuer">Issuer: <strong>ServiceNow</strong></p>
             <div class="cert-metadata-box">
-              <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">54f1454a-0646-404f-b0fe-9c56959e6338</span></div>
               <div class="meta-row"><span class="meta-k">Issue Date:</span> <span class="meta-v">May 2026</span></div>
+              <div class="meta-row"><span class="meta-k">Credential ID:</span> <span class="meta-v mono-text">54f1454a-0646-404f-b0fe-9c56959e6338</span></div>
             </div>
             <p class="cert-desc">Micro-certification validating foundational Now Platform architecture, user interfaces, list controls, forms, and service catalogs.</p>
             <div class="cert-card-footer">
-              <a href="https://www.credly.com/badges/54f1454a-0646-404f-b0fe-9c56959e6338/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary verify-btn" aria-label="Verify Welcome to ServiceNow on Credly">
-                <span>Verify on Credly</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
+              <div class="cert-actions-wrap">
+                <a href="https://www.credly.com/badges/54f1454a-0646-404f-b0fe-9c56959e6338/public_url" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline cert-btn" aria-label="Verify Welcome to ServiceNow on Credly">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Verify on Credly</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1467,26 +1494,41 @@
       </div>
       <div class="modal-body">
         <div class="modal-image-box">
-          <img src="assets/images/stss.png" alt="Smart Tourist Safety System Live Incident Dashboard Screenshot" class="modal-img">
-          <span class="modal-img-caption">Actual System Interface &bull; Real-time Incident Dashboard</span>
+          <img id="stss-main-img" src="assets/images/stss.png" alt="Smart Tourist Safety System Live Incident Dashboard Screenshot" class="modal-img">
+          <span id="stss-img-caption" class="modal-img-caption">Actual System Interface &bull; Real-time Incident Dashboard</span>
         </div>
 
-        <!-- Real Screenshot Gallery -->
+        <!-- Real Screenshot Gallery & Interactive Carousel -->
         <div class="modal-gallery-strip">
-          <h4 class="gallery-title">Live System Screenshots</h4>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img src="assets/images/stss (2).png" alt="STSS Map Geofence Interface" class="gallery-thumb" loading="lazy">
-              <span class="gallery-label">Geofence &amp; Map Telemetry</span>
+          <div class="gallery-header-row">
+            <h4 class="gallery-title">Live System Screenshots (4)</h4>
+            <div class="gallery-carousel-controls" aria-label="Screenshot carousel controls">
+              <button type="button" class="carousel-arrow-btn" id="stss-carousel-prev" aria-label="Previous screenshot" title="Previous screenshot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <span class="carousel-counter" id="stss-carousel-counter" aria-live="polite">1 / 4</span>
+              <button type="button" class="carousel-arrow-btn" id="stss-carousel-next" aria-label="Next screenshot" title="Next screenshot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
             </div>
-            <div class="gallery-item">
-              <img src="assets/images/stss3.png" alt="STSS Mobile SOS Screen" class="gallery-thumb" loading="lazy">
+          </div>
+          <div class="gallery-grid" id="stss-gallery-grid" role="tablist" aria-label="System screenshots">
+            <button type="button" class="gallery-item active" data-index="0" data-src="assets/images/stss.png" data-alt="Smart Tourist Safety System Live Incident Dashboard Screenshot" data-caption="Actual System Interface &bull; Real-time Incident Dashboard" role="tab" aria-selected="true">
+              <img src="assets/images/stss.png" alt="Incident Dashboard thumbnail" class="gallery-thumb" loading="lazy">
+              <span class="gallery-label">Incident Dashboard</span>
+            </button>
+            <button type="button" class="gallery-item" data-index="1" data-src="assets/images/stss (2).png" data-alt="STSS Map Geofence Interface" data-caption="Geofence &amp; Map Telemetry Interface" role="tab" aria-selected="false">
+              <img src="assets/images/stss (2).png" alt="Map Geofence thumbnail" class="gallery-thumb" loading="lazy">
+              <span class="gallery-label">Geofence &amp; Map</span>
+            </button>
+            <button type="button" class="gallery-item" data-index="2" data-src="assets/images/stss3.png" data-alt="STSS Mobile SOS Screen" data-caption="Mobile SOS Alert Screen" role="tab" aria-selected="false">
+              <img src="assets/images/stss3.png" alt="Mobile SOS Screen thumbnail" class="gallery-thumb" loading="lazy">
               <span class="gallery-label">Mobile SOS Screen</span>
-            </div>
-            <div class="gallery-item">
-              <img src="assets/images/stss4.png" alt="STSS Admin Monitor" class="gallery-thumb" loading="lazy">
-              <span class="gallery-label">Admin Management View</span>
-            </div>
+            </button>
+            <button type="button" class="gallery-item" data-index="3" data-src="assets/images/stss4.png" data-alt="STSS Admin Monitor" data-caption="Admin Management View &amp; Incident Dispatch" role="tab" aria-selected="false">
+              <img src="assets/images/stss4.png" alt="Admin Monitor thumbnail" class="gallery-thumb" loading="lazy">
+              <span class="gallery-label">Admin Management</span>
+            </button>
           </div>
         </div>
 

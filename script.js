@@ -25,13 +25,13 @@ const careerChartData = {
     datasets: [{
       label: 'Verified Skill Affinity (0-100)',
       data: [88, 92, 90, 82, 78], // Sample values activated upon verification
-      backgroundColor: 'rgba(99, 102, 241, 0.25)',
-      borderColor: '#6366f1',
+      backgroundColor: 'rgba(59, 130, 246, 0.15)',
+      borderColor: '#3b82f6',
       borderWidth: 2,
-      pointBackgroundColor: '#818cf8',
+      pointBackgroundColor: '#3b82f6',
       pointBorderColor: '#ffffff',
       pointHoverBackgroundColor: '#ffffff',
-      pointHoverBorderColor: '#6366f1',
+      pointHoverBorderColor: '#3b82f6',
       pointRadius: 4
     }]
   },
@@ -43,17 +43,17 @@ const careerChartData = {
       label: 'Target Alignment Score (%)',
       data: [95, 90, 88], // Sample values activated upon verification
       backgroundColor: [
-        'rgba(99, 102, 241, 0.85)',
-        'rgba(56, 189, 248, 0.85)',
-        'rgba(16, 185, 129, 0.85)'
+        '#3b82f6',
+        '#64748b',
+        '#94a3b8'
       ],
       borderColor: [
-        '#4f46e5',
-        '#0284c7',
-        '#059669'
+        '#2563eb',
+        '#475569',
+        '#64748b'
       ],
-      borderWidth: 1.5,
-      borderRadius: 8
+      borderWidth: 1,
+      borderRadius: 6
     }]
   },
 
@@ -67,20 +67,20 @@ const careerChartData = {
       'CyberSecure \'25 Hackathon',
       'Apr 2026: AWS Cloud Quest (Credly)',
       'May 2026: Welcome to ServiceNow (Credly)',
-      'Jun 2026: ServiceNow CSA (Credly)',
-      'ServiceNow CAD (Credly)'
+      'Jun 2026: ServiceNow CAD (Credly)',
+      'Jul 2026: ServiceNow CSA (Credly)'
     ],
     datasets: [{
       label: 'Milestone Progress Level',
       data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      borderColor: '#6366f1',
-      backgroundColor: 'rgba(99, 102, 241, 0.1)',
+      borderColor: '#3b82f6',
+      backgroundColor: 'rgba(59, 130, 246, 0.08)',
       borderWidth: 2,
       fill: true,
       tension: 0.35,
-      pointBackgroundColor: '#818cf8',
-      pointRadius: 6,
-      pointHoverRadius: 8
+      pointBackgroundColor: '#3b82f6',
+      pointRadius: 5,
+      pointHoverRadius: 7
     }]
   }
 };
@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initProjectFilters();
   initProjectModals();
+  initSTSSGalleryCarousel();
   initCareerCharts();
   initContactForm();
   initBackToTop();
@@ -341,77 +342,213 @@ function initProjectFilters() {
    =================================================================== */
 function initProjectModals() {
   const openButtons = document.querySelectorAll('.open-modal-btn');
+  const modals = document.querySelectorAll('.project-modal-backdrop');
   let lastFocusedElement = null;
 
+  function openModal(modal) {
+    if (!modal) return;
+
+    // Ensure any currently open modal is cleanly closed first
+    modals.forEach(m => {
+      if (m !== modal && m.classList.contains('open')) {
+        closeModal(m, false);
+      }
+    });
+
+    modal.removeAttribute('hidden');
+    // Force reflow to guarantee CSS opacity transition
+    void modal.offsetWidth;
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+
+    // Focus close button or dialog for accessibility
+    const closeBtn = modal.querySelector('.modal-close-btn');
+    if (closeBtn) {
+      closeBtn.focus();
+    }
+  }
+
+  function closeModal(modal, restoreFocus = true) {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('hidden', '');
+
+    // Restore body scroll only if no other modal remains open
+    const anyModalOpen = Array.from(modals).some(m => m.classList.contains('open'));
+    if (!anyModalOpen) {
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
+    }
+
+    if (restoreFocus && lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  // Bind click handler to each View Details button
   openButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       const modalId = btn.getAttribute('data-modal');
       const modal = document.getElementById(modalId);
       if (modal) {
         lastFocusedElement = btn;
         openModal(modal);
+      } else {
+        console.warn(`Target modal not found: #${modalId}`);
       }
     });
   });
 
-  function openModal(modal) {
-    modal.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
-
+  // Attach persistent handlers for each modal (no duplicate listeners)
+  modals.forEach(modal => {
+    // 1. Close button click
     const closeBtn = modal.querySelector('.modal-close-btn');
-    if (closeBtn) closeBtn.focus();
-
-    // Attach Esc listener & focus trap
-    modal.addEventListener('keydown', trapFocus);
-    modal.addEventListener('click', handleBackdropClick);
-
-    const closeHandler = () => closeModal(modal);
-    if (closeBtn) closeBtn.addEventListener('click', closeHandler, { once: true });
-  }
-
-  function closeModal(modal) {
-    modal.setAttribute('hidden', '');
-    document.body.style.overflow = '';
-    modal.removeEventListener('keydown', trapFocus);
-    modal.removeEventListener('click', handleBackdropClick);
-
-    if (lastFocusedElement) {
-      lastFocusedElement.focus();
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(modal);
+      });
     }
-  }
 
-  function handleBackdropClick(e) {
-    if (e.target === this) {
-      closeModal(this);
-    }
-  }
+    // 2. Click outside the modal dialog (on the backdrop)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
 
-  function trapFocus(e) {
+    // 3. Accessible Focus Trap within modal
+    modal.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeModal(modal);
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+        const focusables = Array.from(modal.querySelectorAll(focusableSelectors));
+        if (!focusables.length) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+  });
+
+  // Global Escape key safety net
+  document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closeModal(this);
-      return;
-    }
-
-    if (e.key !== 'Tab') return;
-
-    const focusableSelectors = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
-    const focusables = this.querySelectorAll(focusableSelectors);
-    if (!focusables.length) return;
-
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    if (e.shiftKey) {
-      if (document.activeElement === first) {
-        last.focus();
-        e.preventDefault();
-      }
-    } else {
-      if (document.activeElement === last) {
-        first.focus();
-        e.preventDefault();
+      const activeModal = document.querySelector('.project-modal-backdrop.open');
+      if (activeModal) {
+        closeModal(activeModal);
       }
     }
+  });
+}
+
+/* ===================================================================
+   6B. STSS SCREENSHOT GALLERY & INTERACTIVE CAROUSEL
+   =================================================================== */
+function initSTSSGalleryCarousel() {
+  const mainImg = document.getElementById('stss-main-img');
+  const captionEl = document.getElementById('stss-img-caption');
+  const prevBtn = document.getElementById('stss-carousel-prev');
+  const nextBtn = document.getElementById('stss-carousel-next');
+  const counterEl = document.getElementById('stss-carousel-counter');
+  const thumbs = Array.from(document.querySelectorAll('#stss-gallery-grid .gallery-item'));
+
+  if (!mainImg || !thumbs.length) return;
+
+  let currentIndex = 0;
+
+  function setScreenshot(index) {
+    if (index < 0) index = thumbs.length - 1;
+    if (index >= thumbs.length) index = 0;
+
+    currentIndex = index;
+    const targetThumb = thumbs[currentIndex];
+    const src = targetThumb.getAttribute('data-src');
+    const alt = targetThumb.getAttribute('data-alt');
+    const caption = targetThumb.getAttribute('data-caption');
+
+    if (src) {
+      mainImg.style.opacity = '0.4';
+      mainImg.src = src;
+      mainImg.alt = alt || '';
+      setTimeout(() => {
+        mainImg.style.opacity = '1';
+      }, 80);
+    }
+
+    if (captionEl && caption) {
+      captionEl.innerHTML = caption;
+    }
+
+    if (counterEl) {
+      counterEl.textContent = `${currentIndex + 1} / ${thumbs.length}`;
+    }
+
+    thumbs.forEach((thumb, i) => {
+      if (i === currentIndex) {
+        thumb.classList.add('active');
+        thumb.setAttribute('aria-selected', 'true');
+      } else {
+        thumb.classList.remove('active');
+        thumb.setAttribute('aria-selected', 'false');
+      }
+    });
+  }
+
+  // Thumbnail clicks
+  thumbs.forEach((thumb, idx) => {
+    thumb.addEventListener('click', (e) => {
+      e.preventDefault();
+      setScreenshot(idx);
+    });
+  });
+
+  // Carousel previous / next buttons
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setScreenshot(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setScreenshot(currentIndex + 1);
+    });
+  }
+
+  // Keyboard navigation when STSS modal is open
+  const stssModal = document.getElementById('stss-modal');
+  if (stssModal) {
+    stssModal.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setScreenshot(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setScreenshot(currentIndex + 1);
+      }
+    });
   }
 }
 
